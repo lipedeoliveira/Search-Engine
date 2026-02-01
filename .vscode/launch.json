@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug Main (SearchEngine)",
+            "request": "launch",
+            "mainClass": "com.steel.app.Main",
+            "projectName": "searchengine",
+            "console": "integratedTerminal",
+            "stopOnEntry": false
+        }
+    ]
+}
