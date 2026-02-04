@@ -39,7 +39,7 @@ public class Document {
     public void setWord(String newWord){
         this.word = newWord;
         dados
-        .computeIfAbsent(word, k -> new HashMap<>())
+        .computeIfAbsent(word.toLowerCase(), k -> new HashMap<>())
         .merge((getDirectoryPath()+"/"+getArchiveName()+"\t Quantia de vezes::"),1,Integer::sum);
         
     }

@@ -6,8 +6,12 @@ public class Indexer  {
     Document doc = new Document();
     
     public  void Init () throws IOException{
-        ArrayList<String> archives = ScanPast(doc.getDirectoryPath());
-        Reader(archives,doc.getMagicWord());
+        try {
+            ArrayList<String> archives = ScanPast(doc.getDirectoryPath());
+            Reader(archives,doc.getMagicWord());
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
 
 
