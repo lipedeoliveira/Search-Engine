@@ -6,8 +6,8 @@ public class Indexer  {
     Document doc = new Document();
     
     public  void Init () throws IOException{
-        ArrayList<String> archives = ScanPast(doc.getArchivePath());
-        Reader(archives,doc.getName());
+        ArrayList<String> archives = ScanPast(doc.getDirectoryPath());
+        Reader(archives,doc.getMagicWord());
     }
 
 
@@ -26,7 +26,6 @@ public class Indexer  {
     }
 
     // Fluxo do caramba
-    
     public  void Reader(ArrayList<String> arquivos,String target_word)throws IOException{
        Integer i = 0;
        for(String arquivo:arquivos){
@@ -37,20 +36,17 @@ public class Indexer  {
                 
                 //Regex para evitar "não-palavras"
                 String [] palavras = linha.split("[^a-zA-ZáéíóúãõâêîôûÁÉÍÓÚÃÕÂÊÎÔÛ]+");
-                palavras[i] = linha;
                 
                 for(String palavra:palavras){
-
-                    // Seção responsável por exibir o local e o nome do arquivo 
                     // Setando novas palavras no "dicionário"
+                    doc.setArchiveName(arquivo);
                     doc.setWord(palavra);
                 }
-                System.out.print(doc.getWord(target_word));
             }
 
         }
        }
        
-       
+       System.out.println(doc.getWord(target_word));
     }
 }

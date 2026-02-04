@@ -24,8 +24,8 @@ public class CLI {
         }
         ArrayList<String> answers = new ArrayList<String>();
         Document doc = new Document();
-        doc.setArchivePath(directoryPath);
-        doc.setName(magic_word);
+        doc.setDirectoryPath(directoryPath);
+        doc.setMagicWord(magic_word);
 
     }
 }
